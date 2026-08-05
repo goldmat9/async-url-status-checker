@@ -8,7 +8,7 @@ Blazing-fast bulk URL auditing from the command line. Feed it a CSV of URLs or a
 
 Built for technical SEO audits, site migrations, and large-scale link validation where synchronous checkers (or manual crawling) are way too slow.
 
-<!-- TODO: add a 10-second demo GIF here — record one run against a real sitemap -->
+![demo](demo.gif)
 
 ## Features
 
@@ -29,8 +29,8 @@ Requires Python 3.10+.
 ## Usage
 
 ```bash
-# Check a CSV of URLs (one per line, or a `url` column)
-python url_checker.py urls.csv
+# Check a CSV of URLs (one per line, or a `url` column) — try the included demo.csv
+python url_checker.py demo.csv
 
 # Check an entire live sitemap
 python url_checker.py https://example.com/sitemap.xml
@@ -42,20 +42,20 @@ python url_checker.py urls.csv --concurrency 50 --timeout 15 -o report.csv
 Example output:
 
 ```
-Checking 1,240 URLs (concurrency=20)...
+Checking 12 URLs (concurrency=20)...
 
-Checked 1240 URLs
-  OK (2xx/3xx):      1197
-  Broken/errored:    43
-  With redirects:    86
-  Response time:     median 212 ms, max 4810 ms
+Checked 12 URLs
+  OK (2xx/3xx):      9
+  Broken/errored:    3
+  With redirects:    7
+  Response time:     median 243 ms, max 1123 ms
 
 Broken / errored URLs:
-  [HTTP 404] https://example.com/old-landing-page
-  [ClientConnectorError: ...] https://example.com/typo-page
-  ...
+  [HTTP 404] https://github.com/this-page-definitely-does-not-exist-12345
+  [HTTP 404] https://www.python.org/no-such-page-demo-404
+  [ClientConnectorDNSError: ...] https://this-domain-does-not-exist-demo-12345.com
 
-Full report written to url_report.csv
+Full report written to demo_report.csv
 ```
 
 ## Why not X?
