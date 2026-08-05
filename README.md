@@ -1,5 +1,9 @@
 # Async URL Status Checker
 
+[![CI](https://github.com/goldmat9/async-url-status-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/goldmat9/async-url-status-checker/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
+
 Blazing-fast bulk URL auditing from the command line. Feed it a CSV of URLs or an XML sitemap — it checks thousands of URLs concurrently with `asyncio` + `aiohttp`, maps full redirect chains, flags broken links, measures response times, and writes a clean CSV report.
 
 Built for technical SEO audits, site migrations, and large-scale link validation where synchronous checkers (or manual crawling) are way too slow.
